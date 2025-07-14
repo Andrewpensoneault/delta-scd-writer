@@ -35,7 +35,7 @@ build-backend = "hatchling.build"
 
 [tool.ruff]
 src = ["src", "tests"]
-line-length = 100
+line-length = 80
 target-version = "py310"
 fix = true
 
@@ -48,7 +48,7 @@ exclude = []
 convention = "google"
 
 [tool.ruff.lint.per-file-ignores]
-"tests/*.py" = ["D"]
+"tests/*.py" = ["D100", "D101", "D102", "D103"]
 
 [tool.mypy]
 python_version = "3.10"
