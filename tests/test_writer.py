@@ -1,7 +1,7 @@
 """Unit tests for DeltaTableWriter."""
 
 import pytest
-from pyspark.sql import SparkSession, DataFrame
+from pyspark.sql import DataFrame, SparkSession
 
 from delta_scd_writer import DeltaTableWriter
 
@@ -18,5 +18,7 @@ def test_create_or_write_table_invalid_mode_raises_value_error(
         primary_keys=["a"],
     )
 
-    with pytest.raises(ValueError, match="Invalid mode: a. Must be 'append' or 'overwrite'."):
+    with pytest.raises(
+        ValueError, match="Invalid mode: a. Must be 'append' or 'overwrite'."
+    ):
         manager._create_or_write_table(sample_df, "a")
