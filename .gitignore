@@ -208,3 +208,10 @@ __marimo__/
 
 # Scratch notebooks
 notebooks/
+
+# Databricks
+.databricks
+databricks.yml
+
+# vscode
+.vscode
